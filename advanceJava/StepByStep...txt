@@ -1,0 +1,51 @@
+First got the eclips market place in that search hibernate 
+then downlaod jbose final after that restart your computer
+create a maven project into your eclips click next
+select archtype in catlog intenal but i want quick start...
+now you have to group id->(com.cdac.tranning)
+now artifact id is the name of the project..example.hibernate 
+after creating that will automatically download the jar file and press y there..
+project is created.. then eclips automatically handle it in maven project...
+---------------------------------------------------------------------------
+dependency mean jar...
+read all the file that is created into the maven project..
+-------------------------------------------------------------------------
+search maven repository
+then hibernate core relocation select version final version..
+there copy the dependency into the then automatically download 
+then search mysql into the maven repository into the maven repository...
+But now copy and paste the dependency into the pom.xml mai paste krana hai 
+my project step is done now
+==========================================================================
+create a pojo class 
+with getter and setter...
+now create the configuration XML file  under the src/main/java
+create......and fill the details into it by your self ...
+one tag you have add by yourself ....... into the XML file
+<!--table will create automaticatilly-->
+<property name = "hibernate.hbm2ddl.auto">create</property>
+above is the hiberante configiration file next we will create 
+hibernate mapping files.....
+again 1)click new 2)click Other 3)click hibernate and generate the 
+mapping files...mean xml mapping file
+then..
+now you have specifies the class that you what to mapp with..
+add class employee class
+hbm is mapping files
+watch video time23:00 
+if hibernate tool is not working then create manually..
+Employee.hbm.xml create
+create a file manually...
+-------------------------------------------------------------
+Now Just Goto app.java
+it is Our main files so that Configuration cfg..
+Session Factory 
+Session session  = sf.openSession();
+Transaction..
+Create Object 
+Watch video and 
+video
+
+
+
+
