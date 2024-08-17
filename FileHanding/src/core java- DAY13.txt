@@ -1,0 +1,106 @@
+					core java- DAY13	
+collection
+    arraylist
+    linked list
+    stack 
+    map
+
+File Handling
+
+    read write string
+
+1) read data(string) from console
+2) write to the file
+3) read from the file
+4) write to the console
+
+
+  read write objects
+
+1) create object
+2) write object to the file
+3) read object from the file
+4) do a logic
+5) write to the console
+
+-----------------------------------------
+part i
+basic
+part II
+oops
+part III
+packages
+collection
+file handling
+
+1) interface
+2) reversing linked list
+3) sorting map
+4) insert/delete at given node
+5) array of object
+6) has map with object
+7) arraylist- find max from arraylist
+8) write string in file line by line
+9) write only the book name from the book object in has map
+
+
+
+not covered
+1) threading
+2) lambda
+3) stream API
+4) generic
+5) String
+7) innerclass
+8) exception
+9) enum
+10) random file access
+
+
+Socket programming
+
+Socket- client
+
+ServerSocket - Server
+
+accept()
+
+
+getinputStream()
+getoutputStream()
+
+file class will support
+
+
+
+
+Server.java
+
+client.java
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--
+Socket programming
+
+Username-PRN
+Password-Welcome@123

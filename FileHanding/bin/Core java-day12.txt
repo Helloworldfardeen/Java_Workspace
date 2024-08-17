@@ -1,0 +1,95 @@
+			Core java-day12
+
+collection - java.util
+         
+stack
+queue
+linked list
+
+File Handling-
+
+java.io
+
+
+moving data from source(file,console,socket) to destination(file,console,socket)
+
+streams
+
+-data-  primitives,object
+
+InputStream
+     read
+outputStream
+  write
+
+
+
+sequence of string to read or to write
+
+Reader
+
+writer
+
+-----------------------------------------------------------------
+input/output stream classes
+
+FileInputStream
+DataINputStream
+ObjectINputStrem
+BufferedinputStream
+
+FileOUtputStream
+DataOutputStream
+ObjectOutputStrem
+BufferedOUtputStream
+
+reader/writer classes
+
+FileReader
+InputStreamReader
+Bufferedreader
+
+FileWriter
+InputStreamWriter
+BufferedWriter
+
+
+------------------------------------------------------------------
+1) read write sequence of charector from/into the file
+
+1)create file- for read mode - for wirte mode
+
+1a) read data from console
+
+2)write data into the file
+
+3) read data from the file
+
+4) write the data to the console
+
+
+
+
+1) read write object from/into the file
+
+create class
+create object
+1) create file for object write
+2) write object into the file
+
+3) read object from the file
+
+4) write object to the console
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,373 @@
+String read write
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class StringWrite
+{
+
+	public static void main(String[] args) throws IOException 
+	{
+		String msg;
+	
+		Scanner s = new Scanner(System.in);
+		FileWriter fw = new FileWriter("dac2.txt");
+	//	while()
+	//	{
+		msg = s.nextLine();
+			
+		fw.write(msg);
+	//}
+		
+		System.out.println("done");
+		fw.close();
+		
+		
+//		FileReader fr = new FileReader("dac2.txt");
+//		
+//		       int ch =fr.read();
+//		System.out.println((char)ch);
+//		
+//		fr.close();
+		
+		
+		FileReader fr = new FileReader("dac2.txt");
+		
+		BufferedReader br = new BufferedReader(fr);
+		
+		
+		//while()
+
+		//{
+	       String fmsg =br.readLine();
+	       
+	             int ln = fmsg.length();
+	       
+	System.out.println(fmsg+ " " +ln);
+		//  }
+	fr.close();
+		
+		
+		
+		
+	}
+	
+	
+}
+-----------------------------
+object read write
+
+
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+public class ObjectWriteRead 
+{
+
+		
+	public static void main(String[] args) throws IOException, ClassNotFoundException 
+	{
+	
+		
+		Student s1 = new Student(1001,"shan",90);
+		Student s2 = new Student(1002,"raj",40);
+		Student s3 = new Student(1003,"kumar",50);
+
+		//write to the file
+		
+		FileOutputStream fo = new FileOutputStream("dac3.txt");
+		ObjectOutputStream oo = new ObjectOutputStream(fo);
+		
+		
+		oo.writeObject(s1);
+		oo.writeObject(s2);
+		oo.writeObject(s3);
+		
+		oo.close();
+		fo.close();
+		
+		System.out.println("file write is over");
+		
+		System.out.println("file read");
+		
+		FileInputStream fi = new FileInputStream("dac3.txt");
+		ObjectInputStream oi = new ObjectInputStream(fi);
+		Student obj;
+		try
+		{
+		   while((obj =(Student) oi.readObject())!=null)
+		   {
+			   obj.disp();
+		   }
+		}
+		catch(EOFException e)
+		{
+			
+		}
+		
+		
+		
+	}
+
+	
+	
+	
+	
+	
+	
+}
+----------------------
+object read write using CSV
+
+import java.io.BufferedReader;
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+public class ObjectReadWriteusingCSV 
+{
+
+	
+	public static void findresult(Student obj)
+	{
+		obj.disp();
+		if(obj.mark>35)
+			System.out.print("PASS");
+		else
+			System.out.print("FAIL");
+		
+		System.out.println();
+	}
+	
+	
+	
+	
+	
+		
+	public static void main(String[] args) throws IOException, ClassNotFoundException 
+	{
+	      // read row of data(string) from file
+		
+		FileReader fr = new FileReader("student.csv");
+		BufferedReader br = new BufferedReader(fr);
+		String fmsg = null;
+		String[] sobj;
+		
+//		fmsg=br.readLine();
+//				
+//		sobj= fmsg.split(",");
+//		
+//		System.out.println(sobj[0]);
+//		System.out.println(sobj[1]);
+//		System.out.println(sobj[2]);
+//		
+//		Student s  = new Student(Integer.parseInt(sobj[0]),sobj[1],Integer.parseInt(sobj[2]));
+//		
+//			s.disp();
+				
+		FileOutputStream fo = new FileOutputStream("dac3.txt");
+		ObjectOutputStream oo = new ObjectOutputStream(fo);
+		
+		
+			while((fmsg=br.readLine())!=null)
+			{
+				
+				sobj= fmsg.split(",");
+				
+				Student s  = new Student(Integer.parseInt(sobj[0]),sobj[1],Integer.parseInt(sobj[2]));
+				oo.writeObject(s);
+				
+			}
+		
+		
+		
+		
+		
+		
+				
+				
+				
+//		while(()!=null)
+//		{
+//						
+//		}
+			
+		
+		
+
+//		//write to the file
+//		
+//		FileOutputStream fo = new FileOutputStream("dac3.txt");
+//		ObjectOutputStream oo = new ObjectOutputStream(fo);
+//		
+//		
+//		oo.writeObject(s1);
+//		oo.writeObject(s2);
+//		oo.writeObject(s3);
+//		
+		oo.close();
+		fo.close();
+		
+		System.out.println("file write is over");
+		
+		System.out.println("file read");
+		
+		FileInputStream fi = new FileInputStream("dac3.txt");
+		ObjectInputStream oi = new ObjectInputStream(fi);
+		Student obj;
+		try
+		{
+		   while((obj =(Student) oi.readObject())!=null)
+		   {
+			   //obj.disp();
+			   
+			   findresult(obj);
+			   
+			   
+			   
+		   }
+		}
+		catch(EOFException e)
+		{
+			
+		}
+		
+		
+		
+	}
+
+	
+
+	
+	
+	
+	
+	
+	}	
+
+-----------------------------------------
+SOCKET programming
+client
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.util.Scanner;
+
+public class Client 
+{
+
+	public static void main(String[] args) throws UnknownHostException, IOException 
+	{
+	
+		Socket s = new Socket("localhost",999);
+		
+		//read from client
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter the message for server");
+		String cmsg = sc.nextLine();
+		
+		OutputStream os= s.getOutputStream();
+		PrintStream ps = new PrintStream(os);
+		
+		//write the socket
+		
+		ps.println(cmsg);
+		
+		System.out.println("client send message to socket");
+		
+		s.close();
+		os.close();
+		ps.close();
+		
+		
+		
+		
+		
+		
+		         
+		
+		
+		
+	}
+	
+}
+
+Server
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class Server
+{
+
+	public static void main(String[] args) throws IOException 
+	{
+		
+		ServerSocket ss = new ServerSocket(999);
+		      Socket s= ss.accept();
+		      
+		      System.out.println("socket programing");
+		      
+		      //read from the socket
+		      
+		              InputStream is =s.getInputStream();
+		              
+		              Scanner sc = new Scanner(is);
+		                 String cmsg = sc.nextLine();
+		       //write to the console          
+		                 System.out.println("message sent by client is "+ cmsg);
+		
+		           ss.close();
+		           s.close();
+		           is.close();
+		
+		
+	}
+	
+}
+----------------------------------
+student
+import java.io.Serializable;
+
+public class Student implements Serializable
+{
+
+	int id;
+	String name;
+	int mark;
+	
+	public Student(int id, String name, int mark) {
+		
+		this.id = id;
+		this.name = name;
+		this.mark = mark;
+	}
+	
+	
+	void disp()
+	{
+		System.out.print(id+name+mark);
+	}
+	
+}
+------------------------------------------
