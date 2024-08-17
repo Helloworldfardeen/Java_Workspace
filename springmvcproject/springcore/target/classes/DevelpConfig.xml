@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="address1"
+		class="com.cdac.tranning.springcore.model.Address">
+		<property name="adressline1" value="Near Sherpur Kalan"></property>
+		<property name="city" value="Pilibhit"></property>
+		<property name="state" value="Uttar Pradesh"></property>
+		<property name="country" value="India"></property>
+	</bean>
+	<bean id="develp1"
+		class="com.cdac.tranning.springcore.model.Developer">
+		<property name="id" value="1232312"></property>
+		<property name="name" value="Fardeen Khan"></property>
+		<property name="Address" ref="address1"></property><!-- here we use reference 
+			of address class has a relationship -->
+	</bean><!-- we are doing this because we want we loselly coupled class -->
+
+</beans>
