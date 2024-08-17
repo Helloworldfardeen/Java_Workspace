@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Shop Stop Login</title>
+  <style>
+    /* Add some basic styling to the page */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      color: #00698f;
+    }
+    hr {
+      border: 1px solid #ccc;
+    }
+    form {
+      width: 300px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    input[type="submit"] {
+      width: 100%;
+      height: 40px;
+      background-color: #00698f;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #004d7f;
+    }
+    a {
+      text-decoration: none;
+      color: #00698f;
+    }
+    a:hover {
+      color: #004d7f;
+    }
+  </style>
+</head>
+<body align="center">
+  <h1 align="center">SHOP STOP <br> login Form</h1>
+  <hr>
+  <form action="loginServlet" method="post">
+    <b>User Name :</b><input name="username" type="text" required>
+    <br><br>
+    <b>Password  :&nbsp;</b><input name="password" type="password" required>
+    <br><br>
+    <input type="submit" value="Login" />
+    <br>
+  </form>
+  <hr>
+  <a href="go_to">visit CDAC</a>
+  <hr>
+  <h3><b>M Search Form</b></h3>
+  <br>
+  <form action="MySearcher">
+    <input name="search" placeholder="Search" type="text" required>
+    <input type="submit" value="Google Search" />
+  </form>
+
+  <!-- Add some JavaScript to validate the form inputs -->
+  <script>
+    const loginForm = document.querySelector('form[action="loginServlet"]');
+    const searchForm = document.querySelector('form[action="MySearcher"]');
+
+    loginForm.addEventListener('submit', (e) => {
+      const username = loginForm.username.value;
+      const password = loginForm.password.value;
+
+      if (username === '' || password === '') {
+        alert('Please fill in both username and password');
+        e.preventDefault();
+      }
+    });
+
+    searchForm.addEventListener('submit', (e) => {
+      const searchQuery = searchForm.search.value;
+
+      if (searchQuery === '') {
+        alert('Please enter a search query');
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>

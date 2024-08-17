@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Customer Details</title>
+<style>
+body {
+	background-color: aqua;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	color: red;
+	text-align: center;
+	margin-top: 20px;
+}
+
+form {
+	width: 50%;
+	margin: 0 auto;
+	background-color: #f0f0f0;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+label {
+	font-weight: bold;
+}
+
+input[type="number"], input[type="text"], select, textarea {
+	width: 100%;
+	padding: 10px;
+	margin: 5px 0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+input[type="submit"] {
+	width: 100%;
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+input[type="submit"]:hover {
+	background-color: #45a049;
+}
+
+hr {
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+}
+</style>
+<script>
+        function validateForm() {
+            var customerId = document.getElementById("input-1").value;
+            var customerName = document.getElementById("input-2").value;
+            if (customerId.trim() === "" || customerName.trim() === "") {
+                alert("Customer ID and Customer Name cannot be empty!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+	<h1>Customer Registration Form - Shop Stop</h1>
+	<hr>
+	<form action="RegisterServlet" method="get"
+		onsubmit="return validateForm()">
+		<label for="input-1">Customer ID</label> <input name="id"
+			placeholder="Number" type="number" /> <br>
+		<br> <label for="input-2">Customer Name</label> <input
+			name="name" placeholder="text" type="text" /> <br>
+		<br> <b>Customer Qualification</b><br> <input
+			name=qualification type=checkbox value=BSC /> BSC <input
+			name=qualification type=checkbox value=MSC /> MSC <input
+			name=qualification type=checkbox value=Phd /> P.hd <br>
+		<br> <b>Customer Gender</b><br> <input name=sex type=radio
+			value=Male /> Male <input name=sex type=radio value=Female />
+		Female <br>
+		<br> <b>Customer Technologies</b><br> <select size="5"
+			name="technologies" multiple="multiple">
+			<option value="C++">C++</option>
+			<option value="Java">Java</option>
+			<option value=".Net">.Net</option>
+			<option value="Oracle">Oracle</option>
+			<option value="Testing">Testing</option>
+			<option value="Support">Support</option>
+		</select> <br>
+		<br> <b>Customer City</b><br> <select name="city">
+			<option value="Bengalore">Bengalore</option>
+			<option value="Delhi">Delhi</option>
+			<option value="Mumbai">Mumbai</option>
+			<option value="Hyderabad">Hyberabad</option>
+			<option value="Lucknow">Lucknow</option>
+			<option value="Jaipur">Jaipur</option>
+		</select> <br>
+		<br> <b>Customer Address</b><br>
+		<textarea name="address"></textarea>
+		<br>
+		<br> <input type="submit" value="Register" />
+	</form>
+</body>
+</html>
